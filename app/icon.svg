@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LifeLink">
+  <rect width="64" height="64" rx="15" fill="#e11d48" />
+  <path
+    d="M32 12.5c7.8 8.2 14.6 15.6 14.6 23.6a14.6 14.6 0 1 1-29.2 0c0-8 6.8-15.4 14.6-23.6Z"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="3.4"
+    stroke-linejoin="round"
+  />
+</svg>
