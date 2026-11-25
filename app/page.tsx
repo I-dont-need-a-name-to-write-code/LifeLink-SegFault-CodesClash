@@ -1,17 +1,14 @@
 import Link from "next/link";
 import HeroSearch from "@/components/hero-search";
 import HomeStats from "@/components/home-stats";
-import { OpenRequests } from "@/components/open-requests";
 import {
   ArrowRightIcon,
   CheckIcon,
   ClockIcon,
   DropletIcon,
   HeartPulseIcon,
-  PinIcon,
   SearchIcon,
   ShieldIcon,
-  SparkIcon,
   UsersIcon,
 } from "@/components/icons";
 import { canDonateTo } from "@/lib/blood";
@@ -59,10 +56,6 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <div className="container-page grid items-start gap-12 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
           <div className="animate-rise">
-            <span className="badge bg-rose-50 text-rose-700 ring-1 ring-rose-200">
-              <SparkIcon className="size-3.5" />
-              CodesClash 2026 · Problem 02
-            </span>
             <h1 className="mt-5 max-w-2xl text-4xl font-bold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl lg:text-[3.4rem]">
               Find the right blood donor,{" "}
               <span className="text-rose-600">close to home.</span>
@@ -96,82 +89,57 @@ export default function HomePage() {
             <div className="absolute -right-6 bottom-10 size-40 rounded-full bg-amber-200/40 blur-3xl" />
 
             <article className="card relative p-5 sm:p-6">
-              <div className="flex items-center justify-between">
-                <span className="badge bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200">
-                  <span className="size-1.5 rounded-full bg-emerald-500" />
-                  Open to contact
-                </span>
-                <span className="text-[0.7rem] font-medium uppercase tracking-wider text-slate-400">
-                  Sample profile
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-rose-600">
+                    Smart matching
+                  </p>
+                  <h2 className="mt-1.5 text-lg font-semibold text-slate-900">
+                    More than one group can help
+                  </h2>
+                </div>
+                <span className="grid place-items-center rounded-xl bg-rose-600 px-3 py-2 text-base font-bold text-white">
+                  A+
                 </span>
               </div>
-
-              <div className="mt-5 flex items-center gap-3">
-                <span className="grid size-12 place-items-center rounded-full bg-gradient-to-br from-rose-100 to-rose-50 text-sm font-bold text-rose-700 ring-1 ring-rose-100">
-                  AM
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p className="truncate font-semibold text-slate-900">
-                    Aarav Mehta
-                  </p>
-                  <p className="flex items-center gap-1 truncate text-xs text-slate-500">
-                    <PinIcon className="size-3.5" />
-                    Andheri West, Mumbai · 400058
-                  </p>
-                </div>
-                <span className="rounded-xl bg-rose-600 px-2.5 py-1.5 text-sm font-bold text-white">
-                  O−
-                </span>
+              <p className="muted mt-3">
+                For a patient who needs A+, the standard compatibility chart
+                also allows these donor groups.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {["A+", "A−", "O+", "O−"].map((item) => (
+                  <span
+                    key={item}
+                    className="badge bg-rose-50 text-rose-700 ring-1 ring-rose-200"
+                  >
+                    {item}
+                  </span>
+                ))}
               </div>
-
-              <div className="mt-5 grid grid-cols-2 gap-3">
-                <div className="rounded-xl bg-slate-50 p-3">
-                  <p className="text-[0.7rem] font-medium uppercase tracking-wide text-slate-500">
-                    Last donation
-                  </p>
-                  <p className="mt-1 text-sm font-semibold text-slate-900">
-                    5 months ago
-                  </p>
-                </div>
-                <div className="rounded-xl bg-slate-50 p-3">
-                  <p className="text-[0.7rem] font-medium uppercase tracking-wide text-slate-500">
-                    Can donate to
-                  </p>
-                  <p className="mt-1 text-sm font-semibold text-slate-900">
-                    All 8 groups
-                  </p>
-                </div>
-              </div>
-
-              <p className="mt-4 rounded-xl bg-rose-50/80 px-3.5 py-3 text-xs leading-relaxed text-rose-900 ring-1 ring-rose-100">
-                O− red cells are compatible with every blood group, which makes
-                these donors important in emergencies.
+              <p className="mt-4 rounded-xl bg-slate-50 px-3.5 py-3 text-xs leading-relaxed text-slate-600 ring-1 ring-slate-200">
+                Search includes compatible groups by default. You can switch to
+                exact matches at any time.
               </p>
             </article>
 
-            <article className="card relative mt-4 ml-auto w-full p-4 sm:w-[94%] sm:p-5">
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <p className="text-xs font-medium text-slate-500">
-                    Urgent request · 20 min ago
-                  </p>
-                  <p className="mt-1 font-semibold text-slate-900">
-                    2 units of A+ · City General Hospital
-                  </p>
-                  <p className="text-xs text-slate-500">
-                    Andheri East, Mumbai · Ref LL-7K2M4Q
-                  </p>
-                </div>
-                <span className="badge bg-rose-600 text-white">Critical</span>
-              </div>
-              <div className="mt-3 flex items-center gap-2 text-xs font-medium text-emerald-700">
-                <CheckIcon className="size-3.5" />
-                Status: donors contacted
-              </div>
+            <article className="card relative mt-4 ml-auto w-full p-5 sm:w-[94%]">
+              <h3 className="font-semibold text-slate-900">Private by design</h3>
+              <ul className="mt-3 space-y-2.5 text-sm text-slate-600">
+                {[
+                  "No phone numbers or home addresses",
+                  "No medical reports or eligibility claims",
+                  "Hospitals and blood banks make the final call",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <CheckIcon className="mt-0.5 size-4 shrink-0 text-emerald-600" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </article>
 
             <p className="mt-4 text-center text-[0.7rem] text-slate-400">
-              Illustration using fictional sample profiles
+              Compatibility shown as a general guide only
             </p>
           </div>
         </div>
@@ -206,10 +174,6 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-      </section>
-
-      <section className="container-page py-6">
-        <OpenRequests limit={2} />
       </section>
 
       <section className="container-page py-14">

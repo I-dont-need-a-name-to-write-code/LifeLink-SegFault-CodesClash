@@ -15,9 +15,8 @@ export default function SiteFooter() {
             </span>
           </div>
           <p className="muted mt-4 max-w-sm">
-            A blood donor directory for finding matching profiles by group and
-            area, sending requests and tracking them. Built for the CodesClash
-            2026 preliminary round.
+            A blood donor directory for finding potential donors by group and
+            area, sending sample requests and tracking them.
           </p>
           <p className="mt-4 text-xs font-medium text-slate-500">
             All profiles, names and locations shown are fictional sample data.
