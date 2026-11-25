@@ -125,20 +125,6 @@ Browser (React client components)
 
 ---
 
-## Demo script (3–5 minutes)
-
-1. **Landing page** — explain the problem, point at the compatibility-aware search.
-2. **Search** — pick `O−`, search `Mumbai`; note compatible groups and exact-match ordering.
-3. **Send request** — open a donor card, submit a request, copy the reference code.
-4. **Track** — open `/track`, paste the code, show the status timeline.
-5. **Register** — add a new sample donor; show it is pending.
-6. **Admin** — unlock with `codesclash`, approve the new listing, then return to the directory and find it.
-7. **Requests board** — show open requests, click *I can help*, then see the offer inside the admin dashboard and update the status.
-
-Try `LL-7K2M4Q` on the Track page for a ready-made in-progress sample.
-
----
-
 ## What is simulated
 
 - All donor profiles, requests and offers to help are sample data.
