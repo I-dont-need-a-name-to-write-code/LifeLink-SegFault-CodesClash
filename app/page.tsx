@@ -54,8 +54,8 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden">
-        <div className="container-page grid items-start gap-12 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
-          <div className="animate-rise">
+        <div className="container-page py-12 lg:py-20">
+          <div className="animate-rise max-w-3xl">
             <h1 className="mt-5 max-w-2xl text-4xl font-bold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl lg:text-[3.4rem]">
               Find the right blood donor,{" "}
               <span className="text-rose-600">close to home.</span>
@@ -84,64 +84,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-md lg:mt-6">
-            <div className="absolute -left-8 top-4 size-32 rounded-full bg-rose-200/40 blur-3xl" />
-            <div className="absolute -right-6 bottom-10 size-40 rounded-full bg-amber-200/40 blur-3xl" />
-
-            <article className="card relative p-5 sm:p-6">
-              <div className="flex items-center justify-between gap-3">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-rose-600">
-                    Smart matching
-                  </p>
-                  <h2 className="mt-1.5 text-lg font-semibold text-slate-900">
-                    More than one group can help
-                  </h2>
-                </div>
-                <span className="grid place-items-center rounded-xl bg-rose-600 px-3 py-2 text-base font-bold text-white">
-                  A+
-                </span>
-              </div>
-              <p className="muted mt-3">
-                For a patient who needs A+, the standard compatibility chart
-                also allows these donor groups.
-              </p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {["A+", "A−", "O+", "O−"].map((item) => (
-                  <span
-                    key={item}
-                    className="badge bg-rose-50 text-rose-700 ring-1 ring-rose-200"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-              <p className="mt-4 rounded-xl bg-slate-50 px-3.5 py-3 text-xs leading-relaxed text-slate-600 ring-1 ring-slate-200">
-                Search includes compatible groups by default. You can switch to
-                exact matches at any time.
-              </p>
-            </article>
-
-            <article className="card relative mt-4 ml-auto w-full p-5 sm:w-[94%]">
-              <h3 className="font-semibold text-slate-900">Private by design</h3>
-              <ul className="mt-3 space-y-2.5 text-sm text-slate-600">
-                {[
-                  "No phone numbers or home addresses",
-                  "No medical reports or eligibility claims",
-                  "Hospitals and blood banks make the final call",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <CheckIcon className="mt-0.5 size-4 shrink-0 text-emerald-600" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </article>
-
-            <p className="mt-4 text-center text-[0.7rem] text-slate-400">
-              Compatibility shown as a general guide only
-            </p>
-          </div>
         </div>
       </section>
 
